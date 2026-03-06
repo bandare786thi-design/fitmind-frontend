@@ -38,5 +38,5 @@ Frontend web app for \*\*FitMind\*\* (UI for login/register, dashboard, moods, w
 
 git clone https://github.com/bandare786thi-design/fitmind-frontend.git
 
-cd fitmind-frontend
+cd fitmind-frontends
 
