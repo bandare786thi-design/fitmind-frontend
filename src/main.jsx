@@ -22,6 +22,7 @@ import HistoryPage from "./pages/HistoryPage.jsx";
 import ReportsPage from "./pages/ReportsPage.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
 import OnboardingPage from "./pages/OnboardingPage.jsx";
+import SmartRecommendPage from "./pages/SmartRecommendPage.jsx";
 
 import VerifyEmailPage from "./pages/VerifyEmailPage.jsx";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage.jsx";
@@ -38,16 +39,13 @@ const router = createBrowserRouter(
   [
     { path: "/", element: <Navigate to="/dashboard" replace /> },
 
-    // ✅ Public routes
     { path: "/login", element: <LoginPage /> },
     { path: "/register", element: <RegisterPage /> },
 
-    // ✅ MUST be public (email links / reset links)
     { path: "/verify-email", element: <VerifyEmailPage /> },
     { path: "/forgot-password", element: <ForgotPasswordPage /> },
     { path: "/reset-password", element: <ResetPasswordPage /> },
 
-    // ✅ Protected routes
     {
       element: (
         <ProtectedRoute>
@@ -56,6 +54,7 @@ const router = createBrowserRouter(
       ),
       children: [
         { path: "/dashboard", element: <DashboardPage /> },
+        { path: "/smart-recommend", element: <SmartRecommendPage /> },
         { path: "/mood", element: <MoodPage /> },
         { path: "/plan", element: <PlanPage /> },
         { path: "/workouts", element: <WorkoutManagerPage /> },
@@ -63,8 +62,6 @@ const router = createBrowserRouter(
         { path: "/reports", element: <ReportsPage /> },
         { path: "/profile", element: <ProfilePage /> },
         { path: "/onboarding", element: <OnboardingPage /> },
-
-        // ✅ FitMind Pro (protected)
         { path: "/privacy", element: <PrivacyCenterPage /> },
         { path: "/insights", element: <InsightsPage /> },
         { path: "/notifications", element: <NotificationsPage /> },
@@ -91,4 +88,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       </ToastProvider>
     </ThemeProvider>
   </React.StrictMode>
-);
+  );

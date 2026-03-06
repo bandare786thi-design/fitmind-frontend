@@ -1,4 +1,3 @@
-// frontend/src/components/Sidebar.jsx
 import { NavLink, useNavigate } from "react-router-dom";
 import { clearToken, getMe } from "../api";
 import { useEffect, useState } from "react";
@@ -54,19 +53,32 @@ export default function Sidebar() {
       <div className="fm-nav">
         <SectionLabel>MAIN</SectionLabel>
         <NavItem to="/dashboard" icon="🏠" label="Dashboard" />
-
-        <SectionLabel>TRACK</SectionLabel>
         <NavItem
-          to="/mood"
+          to="/smart-recommend"
           icon="🧠"
-          label="Mood Check-in"
+          label="Smart Recommend"
           badge={{ text: "AI", tone: "tone-ai" }}
         />
-        <NavItem to="/plan" icon="📅" label="Weekly Plan" badge={{ text: "PRO", tone: "tone-pro" }} />
+
+        <SectionLabel>TRACK</SectionLabel>
+        <NavItem to="/mood" icon="💭" label="Mood Check-in" />
+        <NavItem
+          to="/plan"
+          icon="📅"
+          label="Weekly Plan"
+          badge={{ text: "PRO", tone: "tone-pro" }}
+        />
         <NavItem to="/workouts" icon="🏋️" label="Workouts" />
+        <NavItem to="/history" icon="🕘" label="History" />
+        <NavItem to="/reports" icon="📊" label="Reports" />
 
         <SectionLabel>INSIGHTS</SectionLabel>
-        <NavItem to="/insights" icon="📈" label="Insights" badge={{ text: "NEW", tone: "tone-new" }} />
+        <NavItem
+          to="/insights"
+          icon="📈"
+          label="Insights"
+          badge={{ text: "NEW", tone: "tone-new" }}
+        />
         <NavItem to="/notifications" icon="🔔" label="Notifications" />
 
         <SectionLabel>ACCOUNT</SectionLabel>
@@ -76,7 +88,12 @@ export default function Sidebar() {
         {isAdmin ? (
           <>
             <SectionLabel>ADMIN</SectionLabel>
-            <NavItem to="/admin" icon="🧰" label="Admin Panel" badge={{ text: "STAFF", tone: "tone-staff" }} />
+            <NavItem
+              to="/admin"
+              icon="🧰"
+              label="Admin Panel"
+              badge={{ text: "STAFF", tone: "tone-staff" }}
+            />
           </>
         ) : null}
       </div>
